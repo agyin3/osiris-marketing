@@ -4,21 +4,21 @@
             "bg": "bg-blue-900",
             "title": "Solution for all your needs",
             "text": "With a variety of packages for you to choose from, you can rest assured that what you need, we have.",
-            "image": "bg-details_1",
+            "image": "bg-details-1",
             "classes": "flex-col md:flex-row"
         },
         {
             "bg": "bg-white",
             "title": "Modern responsive design",
             "text": "Featuring carefully crafted, mobile-first components, your end product will function beautifully on any device!",
-            "image": "bg-details_2",
+            "image": "bg-details-2",
             "classes": "flex-col md:flex-row-reverse text-black"
         },
         {
             "bg": "bg-blue-900",
             "title": "Custom development",
             "text": "With our team of experienced developers, we can build the perfect solution for you and your business.",
-            "image": "bg-details_3",
+            "image": "bg-details-3",
             "classes": "flex-col md:flex-row"
         }
     ],
