@@ -32,7 +32,7 @@ export default function Home() {
   return (
     <div className="bg-image bg-homepage-hero text-white text-roboto">
       <Head>
-        <title>Create Next App</title>
+        <title>Osiris Marketing Group</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
