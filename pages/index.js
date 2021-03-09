@@ -1,65 +1,83 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import Head from "next/head";
+import Header from "../components/Header";
+import FSBackground from "../components/FSBackground";
+import Container from "../components/Container";
+import ContactForm from "../components/ContactForm";
+import Details from "../components/Details";
+import data from "../data.json";
+import Services from "../components/Services";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import {
+  faCode,
+  faGlobe,
+  faLaptop,
+  faLock,
+  faChalkboardTeacher,
+  faSearch,
+} from "@fortawesome/free-solid-svg-icons";
+import { useEffect } from "react";
+import Footer from "../components/Footer";
+
+library.add(faLaptop, faGlobe, faCode, faSearch, faLock, faChalkboardTeacher);
 
 export default function Home() {
+  useEffect(async () => {
+    let testing = async () => {
+      let res = await fetch("/api/hello");
+      res = await res.json();
+      console.log(res);
+    };
+    testing();
+  }, []);
   return (
-    <div className={styles.container}>
+    <div className="bg-image bg-homepage-hero text-white text-roboto">
       <Head>
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
+      <Header />
+      <main className="container shadow-2xl mx-auto font-roboto">
+        <FSBackground
+          overlay="bg-black"
+          image="bg-homepage-hero"
+          height="h-full"
+          classes="flex items-center section-wrapper"
+        >
+          <Container className="md:flex-row">
+            <div className="md:w-1/2 mb-5 md:mb-0 flex-grow flex-shrink">
+              <h1 className="text-yellow font-farro text-2xl md:text-3xl lg:text-4xl mb-8">
+                Osiris Marketing Group
+              </h1>
+              <p className="font-bold text-4xl md:text-5xl lg:text-7xl mb-8">
+                Get a custom website tailored to fit your business needs
+              </p>
+              <p className="font-light text-xl md:text-2xl lg:text-2xl">
+                Count on our amazing team to build you the site of your dreams
+                and get you found on Google
+              </p>
+            </div>
+            <div className="md:w-1/2 flex-grow flex-shrink flex justify-end">
+              <ContactForm />
+            </div>
+          </Container>
+        </FSBackground>
+        {data.details.map((deet) => (
+          <Details
+            details={{
+              bg: deet.bg,
+              title: deet.title,
+              text: deet.text,
+              image: deet.image,
+            }}
+            classes={deet.classes}
+          />
+        ))}
+        <Services services={data.services} />
       </main>
 
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
+      <footer>
+        <Footer />
       </footer>
     </div>
-  )
+  );
 }

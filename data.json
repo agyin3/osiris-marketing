@@ -1,0 +1,63 @@
+{
+    "details": [
+        {
+            "bg": "bg-blue-900",
+            "title": "Solution for all your needs",
+            "text": "With a variety of packages for you to choose from, you can rest assured that what you need, we have.",
+            "image": "bg-details_1",
+            "classes": "flex-col md:flex-row"
+        },
+        {
+            "bg": "bg-white",
+            "title": "Modern responsive design",
+            "text": "Featuring carefully crafted, mobile-first components, your end product will function beautifully on any device!",
+            "image": "bg-details_2",
+            "classes": "flex-col md:flex-row-reverse text-black"
+        },
+        {
+            "bg": "bg-blue-900",
+            "title": "Custom development",
+            "text": "With our team of experienced developers, we can build the perfect solution for you and your business.",
+            "image": "bg-details_3",
+            "classes": "flex-col md:flex-row"
+        }
+    ],
+    "services": [
+        {
+            "icon": ["fas", "laptop"],
+            "title": "Web",
+            "desc": "We can build, optimize, and secure your site whether WordPress, Squarespace, or anything else.",
+            "color": "purple-800"
+        },
+        {
+            "icon": ["fas", "globe"],
+            "title": "Hosting",
+            "desc":  "We provide you with a quality hosting experience to fit your business needs, unmatched elsewhere online.",
+            "color": "green-800"
+        },
+        {
+            "icon": ["fas", "code"],
+            "title": "Software",
+            "desc": "Need a completely custom app to solve a particularly thorny issue? We've got you covered.",
+            "color": "blue-800"
+        },
+        {
+            "icon": ["fas", "search"],
+            "title": "SEO & Marketing",
+            "desc": "Leveraging analytics and keywords to your advantage has never been easier.",
+            "color": "pink-800"
+        },
+        {
+            "icon": ["fas", "lock"],
+            "title": "Security",
+            "desc": "Everything we create or optimize, by default, is as secure as possible.",
+            "color": "indigo-800"
+        },
+        {
+            "icon": ["fas", "chalkboard-teacher"],
+            "title": "Workshops",
+            "desc": "We also teach individuals, groups, and teams what we know!",
+            "color": "yellow-800"
+        }
+    ]
+}
