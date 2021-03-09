@@ -1,7 +1,26 @@
 const colors = require("tailwindcss/colors");
 
 module.exports = {
-  purge: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
+  purge: {
+    content: [
+      "./pages/**/*.{js,ts,jsx,tsx}",
+      "./components/**/*.{js,ts,jsx,tsx}",
+    ],
+    options: {
+      safelist: [
+        "text-purple-800",
+        "text-green-800",
+        "text-blue-800",
+        "text-pink-800",
+        "text-indigo-800",
+        "text-yellow-800",
+        "md:flex-row-reverse",
+        "bg-details-1",
+        "bg-details-2",
+        "bg-details-3",
+      ],
+    },
+  },
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
