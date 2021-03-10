@@ -49,7 +49,7 @@ async function postData(data) {
 
 async function sendEmail(email, name) {
   const msg = {
-    from: "osirismarketinggroup@gmail.com", // Change to your verified sender
+    from: "info@osirismarketinggroup.com", // Change to your verified sender
     personalizations: [
       {
         to: [
