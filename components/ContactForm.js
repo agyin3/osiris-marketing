@@ -47,7 +47,7 @@ export default function ContactForm() {
   const onSubmit = async (evt, data) => {
     evt.preventDefault();
     try {
-      if (data.bot_test === "") throw "Invalid form submission";
+      if (!data.bot_test === "") throw "Invalid form submission";
       if (!isValidEmail(data.email)) throw "Valid email address required";
       let res = await fetch("/api/lead", {
         method: "POST",
