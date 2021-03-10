@@ -45,10 +45,10 @@ export default function Home() {
         >
           <Container className="md:flex-row">
             <div className="md:w-1/2 mb-5 md:mb-0 flex-grow flex-shrink">
-              <h1 className="text-yellow font-farro text-2xl md:text-3xl lg:text-4xl mb-8">
+              <h1 className="text-yellow font-farro text-2xl md:text-3xl lg:text-4xl mb-4 md:mb-6 lg:mb-8">
                 Osiris Marketing Group
               </h1>
-              <p className="font-bold text-4xl md:text-5xl lg:text-7xl mb-8">
+              <p className="font-bold text-4xl md:text-5xl lg:text-7xl mb-4 md:mb-6 lg:mb-8">
                 Get a custom website tailored to fit your business needs
               </p>
               <p className="font-light text-xl md:text-2xl lg:text-2xl">
