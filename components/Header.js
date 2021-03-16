@@ -31,14 +31,14 @@ export default function Header() {
               showMenu === true ? "px-8 w-auto" : "px-0 w-0"
             }`}
           >
-            <a href="javascript:void(0)" class="text-xl" onClick={handleClick}>
+            <a href="#" className="text-3xl" onClick={handleClick}>
               &times;
             </a>
             <Link href="#">
-              <a className="font-roboto font-bold md:m-0 text-xl">Services</a>
+              <a className="font-roboto font-bold md:m-0 text-2xl">Services</a>
             </Link>
             <Link href="#">
-              <a className="font-roboto font-bold md:m-0 text-xl">About</a>
+              <a className="font-roboto font-bold md:m-0 text-2xl">About</a>
             </Link>
           </nav>
           {/* Desktop Menu */}
@@ -52,7 +52,7 @@ export default function Header() {
           </nav>
         </div>
       </header>
-      <div className="h-20"></div>
+      <div className="h-16"></div>
     </>
   );
 }
