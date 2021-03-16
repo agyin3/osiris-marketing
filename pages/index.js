@@ -14,11 +14,20 @@ import {
   faLock,
   faChalkboardTeacher,
   faSearch,
+  faSpinner,
 } from "@fortawesome/free-solid-svg-icons";
 import { useEffect } from "react";
 import Footer from "../components/Footer";
 
-library.add(faLaptop, faGlobe, faCode, faSearch, faLock, faChalkboardTeacher);
+library.add(
+  faLaptop,
+  faGlobe,
+  faCode,
+  faSearch,
+  faLock,
+  faChalkboardTeacher,
+  faSpinner
+);
 
 export default function Home() {
   useEffect(async () => {

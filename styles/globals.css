@@ -22,5 +22,32 @@
 }
 
 .form-input {
-  @apply border-2 border-solid border-blue-900 rounded mb-3 pl-2 py-2;
+  @apply border-2 border-solid border-blue-900 rounded pl-2 py-2;
+}
+
+.form-label {
+  @apply mt-3 flex flex-col;
+}
+
+.form-error-text {
+  @apply mt-0.5 text-red-500 text-sm;
+}
+
+.form-error {
+  @apply border-red-500;
+}
+.form-error:focus {
+  @apply outline-red;
+}
+.spinner {
+  animation: spin infinite 5s linear;
+}
+
+@keyframes spin {
+from {
+  transform: rotate(0deg);
+}
+to {
+  transform: rotate(360deg);
+}
 }
