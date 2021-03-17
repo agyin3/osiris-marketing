@@ -2,6 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import smoothScroll from "../utilites/smoothScroll";
 
 export default function Header() {
   const [showMenu, setShowMenu] = useState(false);
@@ -16,14 +17,14 @@ export default function Header() {
     setShowMenu(!showMenu);
   };
 
-  const scrollToDiv = (targetEl) => {
-    if (targetEl) {
-      document.getElementById(targetEl).scrollIntoView({ behavior: "smooth" });
-      setShowMenu(false);
-    } else {
-      window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
-    }
-  };
+  // const smoothScroll = (targetEl) => {
+  //   if (targetEl) {
+  //     document.getElementById(targetEl).scrollIntoView({ behavior: "smooth" });
+  //     setShowMenu(false);
+  //   } else {
+  //     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  //   }
+  // };
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
@@ -32,7 +33,7 @@ export default function Header() {
   }, []);
   return (
     <>
-      <header className="bg-blue-900 w-screen px-2 shadow fixed z-50">
+      <header className="bg-blue-900 w-screen px-2 shadow fixed z-50 text-white">
         <div className="container mx-auto flex justify-between items-center">
           <Image
             src="/osiris_logo-GOLD(500x500).png"
@@ -55,28 +56,24 @@ export default function Header() {
             <a href="#" className="text-3xl" onClick={toggleMenu}>
               &times;
             </a>
-            <Link href="#">
-              <a
-                onClick={() => scrollToDiv("details")}
-                className="font-roboto font-bold md:m-0 text-2xl"
-              >
-                Why Us?
-              </a>
-            </Link>
-            <Link href="#">
-              <a
-                onClick={() => scrollToDiv("services")}
-                className="font-roboto font-bold md:m-0 text-2xl"
-              >
-                Services
-              </a>
-            </Link>
+            <a
+              onClick={() => smoothScroll("#details")}
+              className="font-roboto font-bold md:m-0 text-2xl"
+            >
+              Why Us?
+            </a>
+            <a
+              onClick={() => smoothScroll("#services")}
+              className="font-roboto font-bold md:m-0 text-2xl"
+            >
+              Services
+            </a>
           </nav>
           {/* Desktop Menu */}
           <nav className="hidden md:w-2/12 text-white content-center justify-between md:flex mr-2 md:mr-0">
             <Link href="#">
               <a
-                onClick={() => scrollToDiv("details")}
+                onClick={() => smoothScroll("#details")}
                 className="font-roboto font-bold md:m-0"
               >
                 Why Us?
@@ -84,7 +81,7 @@ export default function Header() {
             </Link>
             <Link href="#">
               <a
-                onClick={() => scrollToDiv("services")}
+                onClick={() => smoothScroll("#services")}
                 className="font-roboto font-bold md:m-0 ml-2"
               >
                 Services
@@ -98,7 +95,7 @@ export default function Header() {
         className={`animate z-40 cursor-pointer fixed top-85 left-90 ${
           windowPos > 0 ? "opacity-100" : "opacity-0"
         }`}
-        onClick={() => scrollToDiv()}
+        onClick={() => smoothScroll("body")}
       >
         <FontAwesomeIcon
           icon={["fas", "chevron-circle-up"]}
