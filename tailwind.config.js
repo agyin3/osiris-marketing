@@ -56,6 +56,10 @@ module.exports = {
       width: {
         "3/10": "30%",
       },
+      inset: {
+        85: "85%",
+        90: "90%",
+      },
     },
   },
   variants: {
