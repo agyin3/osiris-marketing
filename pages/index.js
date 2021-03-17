@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Header from "../components/Header";
 import FSBackground from "../components/FSBackground";
 import Container from "../components/Container";
 import ContactForm from "../components/ContactForm";
@@ -15,6 +14,7 @@ import {
   faChalkboardTeacher,
   faSearch,
   faSpinner,
+  faChevronCircleUp,
 } from "@fortawesome/free-solid-svg-icons";
 import { useEffect } from "react";
 import Footer from "../components/Footer";
@@ -26,26 +26,38 @@ library.add(
   faSearch,
   faLock,
   faChalkboardTeacher,
-  faSpinner
+  faSpinner,
+  faChevronCircleUp
 );
 
 export default function Home() {
-  useEffect(async () => {
-    let testing = async () => {
-      let res = await fetch("/api/hello");
-      res = await res.json();
-      console.log(res);
-    };
-    testing();
-  }, []);
   return (
     <div className="bg-image bg-homepage-hero text-white text-roboto">
       <Head>
         <title>Osiris Marketing Group</title>
-        <link rel="icon" href="/favicon.ico" />
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="/apple-touch-icon.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="/favicon-32x32.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="/favicon-16x16.png"
+        />
+        <link rel="manifest" href="/site.webmanifest" />
+        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#1e3a8a" />
+        <meta name="msapplication-TileColor" content="#1e3a8a" />
+        <meta name="theme-color" content="#1e3a8a" />
       </Head>
-      <Header />
-      <main className="container shadow-2xl mx-auto font-roboto">
+      <main id="main" className="container shadow-2xl mx-auto font-roboto">
         <FSBackground
           overlay="bg-black"
           image="bg-homepage-hero"
@@ -54,13 +66,13 @@ export default function Home() {
         >
           <Container className="md:flex-row">
             <div className="md:w-1/2 mb-5 md:mb-0 flex-grow flex-shrink">
-              <h1 className="text-yellow font-farro text-2xl md:text-3xl lg:text-4xl mb-4 md:mb-6 lg:mb-8">
+              <h1 className="text-yellow font-farro text-2xl md:text-3xl lg:text-4xl mb-4 md:mb-6 lg:mb-8 scale-in-ver-bottom">
                 Osiris Marketing Group
               </h1>
-              <p className="font-bold text-4xl md:text-5xl lg:text-7xl mb-4 md:mb-6 lg:mb-8">
+              <p className="font-bold text-4xl md:text-5xl lg:text-7xl mb-4 md:mb-6 lg:mb-8 scale-in-ver-bottom-2">
                 Get a custom website tailored to fit your business needs
               </p>
-              <p className="font-light text-xl md:text-2xl lg:text-2xl">
+              <p className="font-light text-xl md:text-2xl lg:text-2xl scale-in-ver-bottom-3">
                 Count on our amazing team to build you the site of your dreams
                 and get you found on Google
               </p>
@@ -70,23 +82,9 @@ export default function Home() {
             </div>
           </Container>
         </FSBackground>
-        {data.details.map((deet) => (
-          <Details
-            details={{
-              bg: deet.bg,
-              title: deet.title,
-              text: deet.text,
-              image: deet.image,
-            }}
-            classes={deet.classes}
-          />
-        ))}
+        <Details />
         <Services services={data.services} />
       </main>
-
-      <footer>
-        <Footer />
-      </footer>
     </div>
   );
 }
