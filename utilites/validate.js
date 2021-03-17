@@ -12,6 +12,7 @@ const validate = (values) => {
   if (!values.business_name) errors.business_name = "Business name is required";
   if (values.business_name && values.business_name.length < 2)
     errors.business_name = "Business name must be a minumum of 2 characters";
+  if (!values.phone) errors.phone = "Valid phone number required";
   if (values.phone && values.phone.length !== 13)
     errors.phone =
       "Invalid phone number. Phone number must be formatted as (555)555-5555";
