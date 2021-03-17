@@ -21,7 +21,8 @@ export default function ContactForm() {
     } else {
       setData({
         ...data,
-        [name]: name === "phone" ? formatPhoneNum(value.trim()) : value.trim(),
+        [name]:
+          name === "phone" ? formatPhoneNum(value.trim(), data) : value.trim(),
       });
     }
   };
@@ -66,7 +67,7 @@ export default function ContactForm() {
     }
   }, [errors]);
   return (
-    <div className="bg-white text-black md:w-4/5 justify-self-end p-5 md:p-8 rounded-lg">
+    <div className="bg-white text-black md:w-4/5 justify-self-end p-5 md:p-8 rounded-lg fade-in">
       <p className="section-title mb-3">Let's Chat Now</p>
       <p className="text-lg lg:text-xl mb-3">
         Enter your info for a callback so we can discuss the best solution for
@@ -78,7 +79,7 @@ export default function ContactForm() {
           className="flex flex-col font-bold"
         >
           <label className="form-label">
-            Name &#x2a;
+            Name
             <input
               type="text"
               className={`form-input ${errors.name ? "form-error" : ""}`}
@@ -90,7 +91,7 @@ export default function ContactForm() {
             {errors.name && <p className="form-error-text">{errors.name}</p>}
           </label>
           <label className="form-label">
-            Business &#x2a;
+            Business
             <input
               type="text"
               className={`form-input ${
@@ -114,7 +115,7 @@ export default function ContactForm() {
             onChange={handleChange}
           />
           <label className="form-label">
-            Email &#x2a;
+            Email
             <input
               className={`form-input ${errors.email ? "form-error" : ""}`}
               name="email"

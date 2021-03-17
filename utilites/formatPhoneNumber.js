@@ -1,4 +1,4 @@
-const formatPhoneNum = (num) => {
+const formatPhoneNum = (num, data) => {
   num = removeNonNums(num);
   if (num.length < data.phone.length) {
     return num.length === 1 ? "" : num;
